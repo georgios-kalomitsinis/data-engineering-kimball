@@ -93,8 +93,7 @@ ORDER BY d.year, d.month, p.product_category;
 ```sql
 SELECT  
     c.country, 
-    CAST(SUM(CASE WHEN i.returned = 'Y' THEN 1 ELSE 0 END) * 100.0 / COUNT(*) AS 
-DECIMAL(5,2)) AS return_rate_percent 
+    CAST(SUM(CASE WHEN i.returned = 'Y' THEN 1 ELSE 0 END) * 100.0 / COUNT(*) AS DECIMAL(5,2)) AS return_rate_percent 
 FROM FactSales f 
 JOIN DimInvoice i ON f.invoice_fk = i.invoice_pk 
 JOIN DimCustomer c ON f.customer_fk = c.customer_pk 
