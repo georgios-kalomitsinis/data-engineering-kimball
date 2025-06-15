@@ -13,17 +13,11 @@ This repository contains the implementation of a Data Warehouse solution based o
 ## 📂 Repository Structure
 
 ├── src/ → SQL scripts and parameters
-
 ├── notebooks/ → ETL pipeline in Jupyter Notebook
-
 ├── docs/ → Architecture & data model diagrams
-
 ├── data/ → Input data file
-
 ├── output/ → Reporting queries
-
 ├── report.pdf → Detailed documentation
-
 └── README.md
 
 markdown
