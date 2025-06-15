@@ -16,6 +16,7 @@ This repository contains the implementation of a Data Warehouse solution using t
 - **Kimball dimensional modeling**
 
 ## 📂 Repository Structure
+```
 ├── src/         → SQL scripts and parameters  
 ├── notebooks/   → ETL pipeline in Jupyter Notebook  
 ├── docs/        → Architecture & data model diagrams  
@@ -23,7 +24,7 @@ This repository contains the implementation of a Data Warehouse solution using t
 ├── output/      → Reporting queries  
 ├── report.pdf   → Detailed documentation  
 └── README.md
-
+```
 
 ## 🧱 Schema Overview
 - **Fact Table:** FactSales (quantities, pricing, total_amount)
