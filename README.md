@@ -58,10 +58,61 @@ See detailed explanation in `report.pdf`.
 
 
 ## 📊 Reporting Aggregations
-SQL queries demonstrating the warehouse's utility:
-1. Top 10 customers by quantity purchased
-2. Total sales per month & product category
-3. Return rate per country
+
+### Below are representative SQL queries showcasing how this dimensional model enables business insights:
+
+### 1️⃣ Top 10 Customers by Purchase Volume
+
+```sql
+SELECT TOP 10  
+    c.customer_id,  
+    SUM(f.quantity) AS total_quantity,  
+    c.country,  
+    c.continent 
+FROM FactSales f 
+JOIN DimCustomer c ON f.customer_fk = c.customer_pk 
+GROUP BY c.customer_id, c.country, c.continent 
+ORDER BY total_quantity DESC; 
+```
+
+### 2️⃣ Total Sales per Month and Product Category
+```sql
+SELECT  
+    d.year,  
+    d.month,  
+    p.product_category,  
+    SUM(f.total_amount) AS total_sales 
+FROM FactSales f 
+JOIN DimDate d ON f.date_fk = d.date_pk 
+JOIN DimProduct p ON f.product_fk = p.product_pk 
+GROUP BY d.year, d.month, p.product_category 
+ORDER BY d.year, d.month, p.product_category; 
+```
+
+## 3️⃣ Return Rate by Country
+```sql
+SELECT  
+    c.country, 
+    CAST(SUM(CASE WHEN i.returned = 'Y' THEN 1 ELSE 0 END) * 100.0 / COUNT(*) AS 
+DECIMAL(5,2)) AS return_rate_percent 
+FROM FactSales f 
+JOIN DimInvoice i ON f.invoice_fk = i.invoice_pk 
+JOIN DimCustomer c ON f.customer_fk = c.customer_pk 
+GROUP BY c.country 
+ORDER BY return_rate_percent DESC;
+```
+
+## 4️⃣ Total Sales and Invoice Count by Time of Day
+```sql
+SELECT  
+    t.time_of_day,
+    SUM(f.total_amount) AS total_sales
+    COUNT(DISTINCT i.invoice_id) AS invoice_count      
+FROM FactSales f  
+JOIN DimTime t ON f.time_fk = t.time_pk 
+GROUP BY t.time_of_day  
+ORDER BY total_sales DESC;
+```
 
 All queries operate on the final fact table (`FactSales`) using joins to dimensions.
 
