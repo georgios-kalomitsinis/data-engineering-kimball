@@ -1,0 +1,34 @@
+[
+    {
+        "continent_map" : {
+            "Europe": ["Austria", "Belgium", "Channel Islands", "Cyprus", "Denmark", "EIRE", "Finland", "France", "Germany", "Greece", 
+                       "Iceland", "Italy", "Lithuania", "Malta", "Netherlands", "Norway", "Poland", "Portugal", "Spain", "Sweden",  
+                       "Switzerland", "U.K.", "United Kingdom"], 
+            "North America": ["Bermuda", "Canada", "USA", "West Indies"], 
+            "South America": ["Brazil"],
+            "Oceania": ["Australia"],
+            "Asia": ["Bahrain", "Hong Kong", "Israel", "Japan", "Korea", "Lebanon", "Singapore", "Thailand", "United Arab Emirates"],
+            "Africa": ["Nigeria", "RSA"],
+            "Unknown": ["Unknown"]
+        },
+        "conn_params" : {
+            "username": "sa",
+            "password": "***",
+            "hostname": "localhost",
+            "database": "SalesDataWarehouse"
+        },
+        "product_category" : {
+            "Kitchen & Tableware": ["mug", "plate", "cutlery", "bowl", "teapot", "cake", "jug", "glass", "server", "teacup", "dish", "stand", "toastrack", "coaster", "placemat"],
+            "Home Decor": ["candle", "t-light", "lantern", "lamp", "sign", "frame", "mirror", "doormat", "hook", "letter", "garland", "block", "clock"],
+            "Gift & Wrapping": ["gift", "wrap", "tag", "napkin", "card", "tape", "box", "ribbon", "sticker"],
+            "Christmas & Seasonal": ["christmas", "bauble", "wreath", "tree", "star", "reindeer", "angel", "snow", "xmas", "stocking", "ball", "balls"],
+            "Bathroom & Body": ["hot water bottle", "soap", "bath", "sponge", "towel", "glove"],
+            "Toys & Kids": ["toy", "doll", "game", "puzzle", "lunchbox", "apron", "teddy", "animal", "puppet", "jigsaw"],
+            "Bags & Accessories": ["bag", "wallet", "purse", "tag", "passport", "luggage", "umbrella"],
+            "Garden & Outdoors": ["bird", "garden", "potting", "seed", "flower", "plant", "planter", "watering", "shed"],
+            "Craft & DIY": ["craft", "kit", "sewing", "notebook", "journal", "pen", "pencil", "scrap"],
+            "Jewelry & Fashion": ["bracelet", "ring", "necklace", "earrings", "brooch", "hair", "comb"],
+            "Lighting": ["light", "lamp", "cherry", "fairy", "bulb", "shade"]
+        }
+    }
+]
